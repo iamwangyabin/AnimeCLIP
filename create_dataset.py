@@ -10,16 +10,16 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 Image.MAX_IMAGE_PIXELS = None
 
 db = load_db("/data/jwang/db2023/danbooru2023.db")
-root_dir = "/data/jwang/danbooruindex/group_0/"
+root_dir = "/data/jwang/danbooruindex/"
 
 
-for artist_folder in os.listdir(root_dir):
-    for item in os.listdir(os.path.join(root_dir, artist_folder)):
-        print(os.path.join(root_dir, artist_folder, item))
+for sub_folder in os.listdir(root_dir):
+    for item in os.listdir(os.path.join(root_dir, sub_folder)):
+        print(os.path.join(root_dir, sub_folder, item))
         id = int(os.path.basename(item).split('.')[0])
-        if os.path.exists(os.path.join(root_dir, artist_folder, str(id) + '.txt')):
+        if os.path.exists(os.path.join(root_dir, sub_folder, str(id) + '.txt')):
             pass
         else:
             caption = make_caption_from_id(id)
-            with open(os.path.join(root_dir, artist_folder, str(id) + '.txt'), 'w') as file:
+            with open(os.path.join(root_dir, sub_folder, str(id) + '.txt'), 'w') as file:
                 file.write(caption)
