@@ -1,9 +1,9 @@
 import dateutil.parser
 
-from db import (
+from .db import (
     Post,
 )
-from metainfo import (
+from .metainfo import (
     rating_map,
     fav_count_percentile_full,
 )
