@@ -20,6 +20,6 @@ for sub_folder in os.listdir(root_dir):
         if os.path.exists(os.path.join(root_dir, sub_folder, str(id) + '.txt')):
             pass
         else:
-            caption = make_caption_from_id(id)
+            caption = make_caption_from_id(id, processor=[])
             with open(os.path.join(root_dir, sub_folder, str(id) + '.txt'), 'w') as file:
                 file.write(caption)
