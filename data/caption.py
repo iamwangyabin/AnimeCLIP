@@ -1,15 +1,15 @@
 from turtle import pd
-from metainfo import (
+from .metainfo import (
     meta_keywords_black_list,
     special_tags,
 )
-from tag_generator import (
+from .tag_generator import (
     rating_tag,
     quality_tag,
     quality_tag_new,
     year_tag,
 )
-from db import (
+from .db import (
     Post,
     Tag,
 )
